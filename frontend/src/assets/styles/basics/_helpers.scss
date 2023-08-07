@@ -1,0 +1,112 @@
+// Font Sizes
+.fs12 {
+    font-size: rem(12px);
+}
+
+.fs14 {
+    font-size: rem(14px);
+}
+
+.fs18 {
+    font-size: rem(18px);
+}
+
+.fs20 {
+    font-size: rem(20px);
+}
+
+.fs24 {
+    font-size: rem(24px);
+}
+
+.fs28 {
+    font-size: rem(28px);
+}
+
+.fs30 {
+    font-size: rem(30px);
+}
+
+// flex helpers
+.align-center {
+    align-items: center;
+}
+
+.flex {
+
+    display: flex;
+
+    >*.full {
+        flex: 1;
+    }
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+    &.space-bet {
+        justify-content: space-between;
+    }
+}
+
+.grid {
+    display: grid;
+}
+
+// Media helpers
+
+.square-ratio {
+    @include aspect-ratio(1, 1);
+}
+
+.video-ratio {
+    @include aspect-ratio(16, 9);
+}
+
+.portrait-ratio {
+    @include aspect-ratio(9, 16);
+}
+
+.hidden {
+    display: none;
+    height: 0;
+    width: 0;
+}
+
+.g5 {
+    gap: 5px;
+}
+.g10 {
+    gap: 10px;
+}
+.g5 {
+    gap: 15px;
+}
+
+.mis5 {
+    margin-inline-start: 5px;
+}
+
+.mt5 {
+    margin-top: 5px;
+}
+.w100 {
+    width: 100%;
+}
+
+.back-btn {
+    background-color: $clrLogo;
+    color: white;
+    font-family: circularH;
+    text-transform: capitalize;
+    width: fit-content;
+    padding: em(2.5px) em(5px);
+    margin-top: 5px;
+}

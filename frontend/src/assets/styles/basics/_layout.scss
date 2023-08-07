@@ -1,0 +1,56 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 15px 1fr 15px;
+
+    >* {
+        grid-column: 2;
+
+        &.full {
+            grid-column: 1 /-1;
+        }
+    }
+
+    &.narrow {
+        grid-template-columns: 10px 1fr 10px;
+
+        @include for-narrow-layout {
+            grid-template-columns: 25px 1fr 25px
+        }
+
+        @include for-normal-layout {
+            grid-template-columns: 50px 1fr 50px
+        }
+
+        @include for-wide-layout {
+            grid-template-columns: auto 1000px auto;
+        }
+
+        .icon-nav {
+            display: none;
+        }
+    }
+
+    @include for-narrow-layout {
+        grid-template-columns:
+            minmax(5px, 25px) minmax(auto, $mobile-breakpoint) minmax(5px, 25px);
+    }
+
+    
+    @include for-normal-layout {
+        grid-template-columns:
+            minmax(30px, 1fr) minmax(auto, $narrow-breakpoint) minmax(30px, 1fr);
+    }
+
+    @include for-wide-layout {
+        grid-template-columns:
+            minmax(20px, em(80px)) minmax(auto, 1fr) minmax(20px, em(80px));
+    }
+}
+
+
+.loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
