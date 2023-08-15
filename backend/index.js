@@ -1,4 +1,5 @@
 const express = require('express')
+const ViteExpress = require('vite-express')
 const cors = require('cors')
 const path = require('path')
 const cookieParser = require('cookie-parser')
@@ -48,6 +49,11 @@ app.get('/**', (req, res) => {
 
 const logger = require('./services/logger.service')
 const port = process.env.PORT || 3030
-http.listen(port, () => {
-    logger.info('Server is running on port: ' + port)
+// ViteExpress.listen(port, () => {
+//     logger.info('Vite Express Server is running on port: ' + port)
+// })
+
+ViteExpress.listen(app, 3030, () => {
+    logger.info('Vite Express Server is running on port: ' + port)
 })
+
